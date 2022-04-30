@@ -4,7 +4,7 @@
       "name":"strawberry",
       "price": 22,
       "picture": "https://i.ibb.co/SVnjtqQ/allec-gomes-xn-Rg3x-Dc-Nn-E-unsplash.jpg",
-      "Supplier Name": "Mcfarland Lane",
+      "SupplierName": "Mcfarland Lane",
       "quantity":"34",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -13,7 +13,7 @@
       "name":"Banana",
       "price": 23,
       "picture": "https://i.ibb.co/mRLnwsN/charlesdeluvio-0v-1-TPz1u-Xw-unsplash.jpg",
-      "Supplier Name": "Amelia Mathis",
+      "SupplierName": "Amelia Mathis",
       "quantity":"33",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -22,7 +22,7 @@
       "name":"grapes",
       "price": 26,
       "picture": "https://i.ibb.co/y5Y4szy/mockup-graphics-Kf-X5c9-Tx-YPg-unsplash.jpg",
-      "Supplier Name": "Ramsey Hughes",
+      "SupplierName": "Ramsey Hughes",
       "quantity":"99",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -31,7 +31,7 @@
       "name":"Mango",
       "price": 43,
       "picture": "https://i.ibb.co/rs72Wf6/mockup-graphics-2-Be-AHd-Kmf8-unsplash.jpg",
-      "Supplier Name": "Patel Kelley",
+      "SupplierName": "Patel Kelley",
       "quantity":"56",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -40,7 +40,7 @@
       "name":"Orange",
       "price": 45,
       "picture": "https://i.ibb.co/yVkhmNm/mae-mu-U1i-Yw-Z8-Dx7k-unsplash.jpg",
-      "Supplier Name": "Joyner Turner",
+      "SupplierName": "Joyner Turner",
       "quantity":"70",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -49,7 +49,7 @@
       "name":"Apple",
       "price": 76,
       "picture": "https://i.ibb.co/R4xnqpS/chris-dez-t2-ZIt-WNXrk-unsplash.jpg",
-      "Supplier Name": "Wendy Herring",
+      "SupplierName": "Wendy Herring",
       "quantity":"23",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -58,7 +58,7 @@
       "name":"jack",
       "price": 34,
       "picture": "https://images.unsplash.com/photo-1622921491193-345ffb510f6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&w=1000&q=80",
-      "Supplier Name": "Angelia Garner",
+      "SupplierName": "Angelia Garner",
       "quantity":"67",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -67,7 +67,7 @@
       "name":"Gouaba",
       "price": 45,
       "picture": "https://i.ibb.co/VtMd0Jy/mockup-graphics-ha-SJEJYzl5-A-unsplash.jpg",
-      "Supplier Name": "Whitfield Doyle",
+      "SupplierName": "Whitfield Doyle",
       "quantity":"12",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -76,7 +76,7 @@
       "name":"Pineapple",
       "price": 54,
       "picture": "https://i.ibb.co/r4SK5WY/fernando-andrade-n-AOZCYc-LND8-unsplash.jpg",
-      "Supplier Name": "Sheri White",
+      "SupplierName": "Sheri White",
       "quantity":"22",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -84,8 +84,8 @@
       "index": 9,
       "name":"Watermelon",
       "price": 66,
-      "picture": "https://images.unsplash.com/photo-1622921491193-345ffb510f6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&w=1000&q=80",
-      "Supplier Name": "Kari Holmes",
+      "picture": "https://i.ibb.co/yPBC4y9/mockup-graphics-Hu-MXepbut-F8-unsplash.jpg",
+      "SupplierName": "Kari Holmes",
       "quantity":"33",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -94,7 +94,7 @@
       "name":"Papeya",
       "price": 55,
       "picture": "https://i.ibb.co/Jxvdjj5/charlesdeluvio-y-PI38imb-QSI-unsplash.jpg",
-      "Supplier Name": "Kirsten Atkinson",
+      "SupplierName": "Kirsten Atkinson",
       "quantity":"44",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -103,7 +103,7 @@
       "name":"Grapefruit",
       "price": 33,
       "picture": "https://i.ibb.co/VtMd0Jy/mockup-graphics-ha-SJEJYzl5-A-unsplash.jpg",
-      "Supplier Name": "Joni Singleton",
+      "SupplierName": "Joni Singleton",
       "quantity":"34",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -112,7 +112,7 @@
       "name":"Avocado",
       "price": 34,
       "picture": "https://i.ibb.co/nD6tBDq/thought-catalog-9a-Osw-Re-DKPo-unsplash-1.jpg",
-      "Supplier Name": "Bertha Gallegos",
+      "SupplierName": "Bertha Gallegos",
       "quantity":"77",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -121,7 +121,7 @@
       "name":"Plum",
       "price": 35,
       "picture": "https://i.ibb.co/S7cJ6yh/mockup-graphics-Xi-WQb-LEh-Fyo-unsplash.jpg",
-      "Supplier Name": "Matilda Jackson",
+      "SupplierName": "Matilda Jackson",
       "quantity":"11",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -130,7 +130,7 @@
       "name":"Pear",
       "price": 15,
       "picture": "https://i.ibb.co/qggkkJf/fahd-khan-mr-Fd-Bd-Tl-Elk-unsplash.jpg",
-      "Supplier Name": "Oneal Maddox",
+      "SupplierName": "Oneal Maddox",
       "quantity":"20",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -139,7 +139,7 @@
       "name":"Garnet",
       "price": 22,
       "picture": "https://i.ibb.co/S7cJ6yh/mockup-graphics-Xi-WQb-LEh-Fyo-unsplash.jpg",
-      "Supplier Name": "Latoya Douglas",
+      "SupplierName": "Latoya Douglas",
       "quantity":"15",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -148,7 +148,7 @@
       "name":"Capsicum",
       "price": 20,
       "picture": "https://i.ibb.co/2Wp9BTm/honza-vojtek-A39-Eq-Nt-Dp-Zs-unsplash.jpg",
-      "Supplier Name": "Jensen Kline",
+      "SupplierName": "Jensen Kline",
       "quantity":"18",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -156,8 +156,8 @@
       "index": 17,
       "name":"Coconut",
       "price": 21,
-      "picture": "https://i.ibb.co/2Wp9BTm/honza-vojtek-A39-Eq-Nt-Dp-Zs-unsplash.jpg",
-      "Supplier Name": "Marcella Richmond",
+      "picture": "https://i.ibb.co/RQvjCNy/irene-kredenets-E95-Lpkg-bgc-unsplash-1.jpg",
+      "SupplierName": "Marcella Richmond",
       "quantity":"3",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -166,7 +166,7 @@
       "name":"Lemon",
       "price": 20,
       "picture": "https://i.ibb.co/wcDdSQM/giorgio-trovato-cw1-MAVs4w-V8-unsplash.jpg",
-      "Supplier Name": "Joyce Gilliam",
+      "SupplierName": "Joyce Gilliam",
       "quantity":"9",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
@@ -175,8 +175,8 @@
       "name":"Hearb",
       "price": 23,
       "picture": "https://i.ibb.co/rs2qpDq/alexandra-kikot-mj-P6-MQz834-E-unsplash.jpg",
-      "Supplier Name": "Lynn Savage",
-      "quantity":"0",
+      "SupplierName": "Lynn Savage",
+      "quantity":"10",
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     }
     

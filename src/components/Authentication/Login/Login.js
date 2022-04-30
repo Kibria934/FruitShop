@@ -9,8 +9,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import Loading from "../../SharePage/Loading/Loading";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -19,11 +18,14 @@ const Login = () => {
   const [signInWithEmailAndPassword, loggedUser, loggedLoading, loggedError] =
     useSignInWithEmailAndPassword(auth);
   const [errors, setErrors] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   /* ---------------------- SignIn with email funtionalities -------------------
   ------------------------------------------------------------------------ */
- 
+
   const handleSignin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -31,7 +33,7 @@ const Login = () => {
     // console.log(email, "password", password);
     if (email && password) {
       signInWithEmailAndPassword(email, password);
-      e.target.reset()
+      e.target.reset();
     }
   };
 
@@ -43,27 +45,27 @@ const Login = () => {
   if (googleLoading) {
     <Loading></Loading>;
   }
-  useEffect(()=>{
+  useEffect(() => {
     if (loggedError) {
       switch (loggedError.code) {
-        case 'auth/wrong-password':
-         toast.error('Please enter the correct password !!')
+        case "auth/wrong-password":
+          toast.error("Please enter the correct password !!");
           break;
-        case 'auth/user-not-found':
-         toast.error('Please create an account first !!')
+        case "auth/user-not-found":
+          toast.error("Please create an account first !!");
           break;
         default:
           console.log(loggedError.code);
           break;
       }
-      }
-    if(user){
-navigate('/')
     }
-      if(loading){
-        <Loading></Loading>
-      }
- },[user,loggedError,error])
+    if (user) {
+      navigate(from, { replace: true });
+    }
+    if (loading) {
+      <Loading></Loading>;
+    }
+  }, [user, loggedError, error]);
   return (
     <div className="f-container">
       <div className="w-25 shadow p-3 rounded-3 mx-auto ">

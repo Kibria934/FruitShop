@@ -7,8 +7,9 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../SharePage/Loading/Loading";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -24,14 +25,19 @@ const SignUp = () => {
     confirmError: "",
     othersError: "",
   });
-  const [displayName, setDisplayName] = useState('');
-  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth, {
+    updating: true,
+  });
+  const location = useLocation();
 
-
+  const from = location.state?.from?.pathname || "/";
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
+    setName(name);
     if (password.length < 6) {
       setErrors({
         ...errors,
@@ -44,42 +50,61 @@ const SignUp = () => {
       if (password !== confirmPassword) {
         setErrors({ ...errors, confirmError: "Password did not match" });
         setErrors({ ...errors, passError: "" });
-        
       }
       if (password == confirmPassword || !user) {
         await createUserWithEmailAndPassword(email, password);
         setErrors({ ...errors, confirmError: "" });
-        e.target.reset()
+        e.target.reset();
         setErrors({ ...errors, passError: "" });
-        // setDisplayName(name)
-        await updateProfile({displayName:name})
+        // await updateProfile({displayName:name})
       }
     }
   };
-useEffect(()=>{
+  useEffect(() => {
     if (error) {
-        // console.log(error.code);
-        switch (error.code) {
-            case 'auth/email-already-in-use':
-             toast.error('Already have this account!!')
-              break;
-            default:
-              console.log(error.code);
-              break;
-          }
+      // console.log(error.code);
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          toast.error("Already have this account!!");
+          break;
+        case "auth/invalid-email":
+          toast.error("Invalid-email");
+          break;
+        default:
+          toast.error(error.code);
+          break;
       }
-      if(user && !error){
-        {toast.success('Your account created')}
-      } 
-      if(googleUser && !googleError){
-        {toast.success('Your account created')}
+    }
+    if (user && !error) {
+      {
+        toast.success("Your account created");
       }
-},[user,error,googleUser,googleError])
+    }
+    if (googleUser && !googleError) {
+      {
+        toast.success("Your account created");
+      }
+    }
+  }, [user, error, googleUser, googleError]);
+  if (loading) {
+    <Loading></Loading>;
+  }
+  useEffect(() => {
+    if (user) {
+      if (user) {
+        console.log(user);
+        updateProfile({ displayName: name });
+        navigate(from, { replace: true });
+      }
+    }
+    if (updating) {
+      <Loading></Loading>;
+    }
+  }, [user, updating]);
 
-
-const handleGoogle = e =>{
-    signInWithGoogle()
-}
+  const handleGoogle = (e) => {
+    signInWithGoogle();
+  };
   return (
     <div>
       <div className="f-container">
