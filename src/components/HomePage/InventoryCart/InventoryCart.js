@@ -7,8 +7,8 @@ const InventoryCart = ({ fruit }) => {
   console.log(fruit);
   const { _id, name, price, picture, quantity, description } = fruit;
   return (
-    <div>
-  <div className="col">
+    <Link className="text-decoration-none text-dark" to={`/inventory/${_id}`} >
+  <div className="col ">
     <div className="card text-start">
       <img height={"500px"} src={picture} alt="fuite image"/>
       <div className="card-body">
@@ -20,7 +20,7 @@ const InventoryCart = ({ fruit }) => {
       </div>
     </div>
 </div>
-    </div>
+    </Link>
   );
 };
 

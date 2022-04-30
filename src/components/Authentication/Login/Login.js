@@ -63,6 +63,7 @@ const Login = () => {
       navigate(from, { replace: true });
     }
     if (loading) {
+      <p>Loadding...</p>;
       <Loading></Loading>;
     }
   }, [user, loggedError, error]);
