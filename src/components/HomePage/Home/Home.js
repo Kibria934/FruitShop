@@ -6,7 +6,6 @@ import Inventory from '../Inventory/Inventory';
 const Home = () => {
     return (
         <div>
-            <NavigationBar></NavigationBar>
             <div >
             <Banner></Banner>
             </div>
