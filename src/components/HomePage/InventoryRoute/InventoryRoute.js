@@ -11,7 +11,7 @@ const InventoryRoute = () => {
 
   const [user, loading, authError] = useAuthState(auth);
   if (loading) {
-    <Loading>P</Loading>;
+    <Loading></Loading>;
   }
 
   const handleDelete = (id) => {

@@ -33,9 +33,6 @@ const NavigationBar = () => {
             </Nav.Link>
             {user && (
               <>
-                <Nav.Link as={Link} to="/manageItem">
-                  Manage Items
-                </Nav.Link>
                 <Nav.Link as={Link} to="/addItem">
                   Add Items
                 </Nav.Link>

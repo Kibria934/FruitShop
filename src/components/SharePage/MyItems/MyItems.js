@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import "./MyItems.css";
+import { RiDeleteBack2Line } from "react-icons/ri";
+import useFruits from "../../hooks/useFruits";
+import { Placeholder } from "react-bootstrap";
 
 const MyItems = () => {
+  const [fruits, setFruits] = useFruits();
   const [myFruit, setMyFruit] = useState([]);
   const [user] = useAuthState(auth);
   const email = user.email;
@@ -15,18 +20,56 @@ const MyItems = () => {
         // console.log(data);
         setMyFruit(data);
       });
-  }, []);
+  }, [fruits]);
+
+  const handleDelete = (id) => {
+    const procced = window.confirm(
+      "Are really want to delete this fruit item?"
+    );
+    if (procced) {
+      fetch(`http://localhost:5000/fruit/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("deleted id:", data);
+          const rest = fruits.filter((f) => f._id !== id);
+          setFruits(rest);
+        });
+    }
+  };
+
   console.log(myFruit);
   return (
-    <div>
-      <div className="container">
-        {myFruit.map((f) => (
-          <div>
-            <div><img width={'400px'}height={'400px'} src={f.picture} alt=""/></div>
-            <div></div>
-          </div>
-        ))}
-      </div>
+    <div className="my-items">
+      {myFruit.length ? (
+        <div className="container">
+          <h1 className="text-center head-tag">My Chosen Fruits</h1>
+          {myFruit?.map((f) => (
+            <div className="d-flex justify-content-between align-items-center  signleIteme">
+              <div className="d-flex justify-content-center align-items-center">
+                <div className="pic">
+                  <img
+                    width={"100px"}
+                    height={"100px"}
+                    src={f.picture}
+                    alt=""
+                  />
+                </div>
+                <div className="ms-2">
+                  {" "}
+                  <h1>{f.name}</h1>
+                </div>
+              </div>
+              <span onClick={() => handleDelete(f._id)} className="fs-2 me-4">
+                <RiDeleteBack2Line />
+              </span>
+            </div>
+          ))}
+        </div>
+      ) : <div  className="container">
+        <h1 className="text-center head-tag text-primary">You have no chosen fruits!!</h1>
+      </div>}
     </div>
   );
 };

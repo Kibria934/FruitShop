@@ -10,7 +10,6 @@ import SignUp from "./components/Authentication/SignUp/SignUp";
 import { ToastContainer } from "react-bootstrap";
 import NavigationBar from "./components/SharePage/Navbar/NavigationBar";
 import InventoryRoute from "./components/HomePage/InventoryRoute/InventoryRoute";
-import ManageItems from "./components/SharePage/ManageItems/ManageItems";
 import AddItems from "./components/SharePage/AddItems/AddItems";
 import MyItems from "./components/SharePage/MyItems/MyItems";
 import PrivateRoute from "./components/SharePage/PrivateRoute/PrivateRoute";
@@ -36,14 +35,6 @@ function App() {
           element={
             <PrivateRoute>
               <InventoryRoute></InventoryRoute>
-            </PrivateRoute>
-          }
-        ></Route>
-        <Route
-          path="/manageItem"
-          element={
-            <PrivateRoute>
-              <ManageItems></ManageItems>
             </PrivateRoute>
           }
         ></Route>
@@ -76,6 +67,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+
     </div>
   );
 }

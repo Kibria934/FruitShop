@@ -1,10 +1,9 @@
 .f-container{
-     border: 1px solid;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     height: 90vh;
+     height: 70vh;
 }
 .resetBtn{
      cursor: pointer;

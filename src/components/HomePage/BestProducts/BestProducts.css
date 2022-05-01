@@ -1,0 +1,55 @@
+.b-container {
+  position: relative;
+  display: flex;
+}
+.b-container img {
+  opacity: 1;
+  display: block;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.b-container:hover img {
+  opacity: 0.6;
+}
+.b-container:hover h3 {
+  opacity: 1;
+}
+.b-container h3 {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.b-container:hover .overlay {
+    opacity: 1;
+  }
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.7s ease;
+  background-color: #2bb9e8;
+}
+.b-container h3 {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  width: 100%;
+}
+.btn-v{
+        border: 1px solid black;
+        background-color: transparent;
+    }
+    .btn-v:hover{
+        border: 0;
+        background-color: #ffffff;
+        color:#055e7c ;
+    }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useFruits from "../../hooks/useFruits";
 import InventoryCart from "../InventoryCart/InventoryCart";
 
@@ -12,6 +13,7 @@ const Inventory = () => {
         <InventoryCart key={f._id} fruit={f}></InventoryCart>
       ))}
       </div>
+<Link to={'/inventory'}> See All Fruits</Link>
     </div>
   );
 };
