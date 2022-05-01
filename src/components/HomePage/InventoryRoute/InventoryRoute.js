@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import useFruits from "../../hooks/useFruits";
 import "./InventorRoute.css";
 
 const InventoryRoute = () => {
   const [fruits, setFruits] = useFruits();
 
+  // useEffect(()=>{
+  //   fetch(``)
+  // },[])
+
+  const handleDelete = (id) => {
+    const procced = window.confirm(
+      "Are really want to delete this fruit item?"
+    );
+    if (procced) {
+      fetch(`http://localhost:5000/fruit/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("deleted id:", data);
+          const rest = fruits.filter((f) => f._id !== id);
+
+          setFruits(rest);
+        });
+    }
+  };
   return (
     <div className="container">
       <h1 className="text-primary m-4 text-center">All fruits</h1>
 
       <div className="row row-cols-1 row-cols-md-3 g-5  mt-4 mx-2 ">
         {fruits.map((f) => (
-          <div className="  c-container">
+          <div key={f._id} className="  c-container">
             {
               <div className="col">
                 <div className="card text-start">
@@ -31,8 +53,15 @@ const InventoryRoute = () => {
                         f.description.slice(0, 110) + "..."}
                     </p>
                     <div className=" d-flex justify-content-center w-100">
-                        <button className="btn px-4 mx-3 btn-primary">Delete</button>
-                        <button className="btn px-4 mx-3 btn-primary">Add New</button>
+                      <button
+                        onClick={() => handleDelete(f._id)}
+                        className="btn px-4 mx-3 btn-primary"
+                      >
+                        Delete
+                      </button>
+                      <button className="btn px-4 mx-3 btn-primary">
+                        <Link className="text-white text-decoration-none" to={'/addItem'}>Add New</Link>
+                      </button>
                     </div>
                   </div>
                 </div>

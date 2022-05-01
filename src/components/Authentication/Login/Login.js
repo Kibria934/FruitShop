@@ -113,7 +113,7 @@ const Login = () => {
             Google SignIn{" "}
           </button>
         </div>
-        <Toaster></Toaster>
+        <Toaster id={'test'}></Toaster>
       </div>
     </div>
   );

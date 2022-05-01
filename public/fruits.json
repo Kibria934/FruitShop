@@ -1,6 +1,5 @@
 [
     {
-      "index": 0,
       "name":"strawberry",
       "price": 22,
       "picture": "https://i.ibb.co/SVnjtqQ/allec-gomes-xn-Rg3x-Dc-Nn-E-unsplash.jpg",
@@ -9,7 +8,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 1,
       "name":"Banana",
       "price": 23,
       "picture": "https://i.ibb.co/mRLnwsN/charlesdeluvio-0v-1-TPz1u-Xw-unsplash.jpg",
@@ -18,7 +16,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 2,
       "name":"grapes",
       "price": 26,
       "picture": "https://i.ibb.co/y5Y4szy/mockup-graphics-Kf-X5c9-Tx-YPg-unsplash.jpg",
@@ -27,7 +24,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 3,
       "name":"Mango",
       "price": 43,
       "picture": "https://i.ibb.co/rs72Wf6/mockup-graphics-2-Be-AHd-Kmf8-unsplash.jpg",
@@ -36,7 +32,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 4,
       "name":"Orange",
       "price": 45,
       "picture": "https://i.ibb.co/yVkhmNm/mae-mu-U1i-Yw-Z8-Dx7k-unsplash.jpg",
@@ -45,7 +40,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 5,
       "name":"Apple",
       "price": 76,
       "picture": "https://i.ibb.co/R4xnqpS/chris-dez-t2-ZIt-WNXrk-unsplash.jpg",
@@ -54,7 +48,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 6,
       "name":"jack",
       "price": 34,
       "picture": "https://images.unsplash.com/photo-1622921491193-345ffb510f6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&w=1000&q=80",
@@ -63,7 +56,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 7,
       "name":"Gouaba",
       "price": 45,
       "picture": "https://i.ibb.co/VtMd0Jy/mockup-graphics-ha-SJEJYzl5-A-unsplash.jpg",
@@ -72,7 +64,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 8,
       "name":"Pineapple",
       "price": 54,
       "picture": "https://i.ibb.co/r4SK5WY/fernando-andrade-n-AOZCYc-LND8-unsplash.jpg",
@@ -81,7 +72,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 9,
       "name":"Watermelon",
       "price": 66,
       "picture": "https://i.ibb.co/yPBC4y9/mockup-graphics-Hu-MXepbut-F8-unsplash.jpg",
@@ -90,7 +80,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 10,
       "name":"Papeya",
       "price": 55,
       "picture": "https://i.ibb.co/Jxvdjj5/charlesdeluvio-y-PI38imb-QSI-unsplash.jpg",
@@ -99,7 +88,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 11,
       "name":"Grapefruit",
       "price": 33,
       "picture": "https://i.ibb.co/VtMd0Jy/mockup-graphics-ha-SJEJYzl5-A-unsplash.jpg",
@@ -108,7 +96,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 12,
       "name":"Avocado",
       "price": 34,
       "picture": "https://i.ibb.co/nD6tBDq/thought-catalog-9a-Osw-Re-DKPo-unsplash-1.jpg",
@@ -117,7 +104,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 13,
       "name":"Plum",
       "price": 35,
       "picture": "https://i.ibb.co/S7cJ6yh/mockup-graphics-Xi-WQb-LEh-Fyo-unsplash.jpg",
@@ -126,7 +112,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 14,
       "name":"Pear",
       "price": 15,
       "picture": "https://i.ibb.co/qggkkJf/fahd-khan-mr-Fd-Bd-Tl-Elk-unsplash.jpg",
@@ -135,7 +120,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 15,
       "name":"Garnet",
       "price": 22,
       "picture": "https://i.ibb.co/S7cJ6yh/mockup-graphics-Xi-WQb-LEh-Fyo-unsplash.jpg",
@@ -144,7 +128,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 16,
       "name":"Capsicum",
       "price": 20,
       "picture": "https://i.ibb.co/2Wp9BTm/honza-vojtek-A39-Eq-Nt-Dp-Zs-unsplash.jpg",
@@ -153,7 +136,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 17,
       "name":"Coconut",
       "price": 21,
       "picture": "https://i.ibb.co/RQvjCNy/irene-kredenets-E95-Lpkg-bgc-unsplash-1.jpg",
@@ -162,7 +144,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 18,
       "name":"Lemon",
       "price": 20,
       "picture": "https://i.ibb.co/wcDdSQM/giorgio-trovato-cw1-MAVs4w-V8-unsplash.jpg",
@@ -171,7 +152,6 @@
       "description":"A great place! We buy all our fruits and vegetables from this market because it is almost always local and reasonably priced! My wife  When we moved "
     },
     {
-      "index": 19,
       "name":"Hearb",
       "price": 23,
       "picture": "https://i.ibb.co/rs2qpDq/alexandra-kikot-mj-P6-MQz834-E-unsplash.jpg",
