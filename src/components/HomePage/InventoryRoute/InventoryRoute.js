@@ -1,14 +1,18 @@
 import React, { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 import useFruits from "../../hooks/useFruits";
+import Loading from "../../SharePage/Loading/Loading";
 import "./InventorRoute.css";
 
 const InventoryRoute = () => {
   const [fruits, setFruits] = useFruits();
 
-  // useEffect(()=>{
-  //   fetch(``)
-  // },[])
+  const [user, loading, authError] = useAuthState(auth);
+  if (loading) {
+    <Loading>P</Loading>;
+  }
 
   const handleDelete = (id) => {
     const procced = window.confirm(
@@ -34,7 +38,7 @@ const InventoryRoute = () => {
         <Link className="text-white text-decoration-none" to={"/addItem"}>
           Add New
         </Link>
-      </button> 
+      </button>
 
       <div className="row row-cols-1 row-cols-md-3 g-5  mt-4 mx-2 ">
         {fruits.map((f) => (
@@ -65,7 +69,14 @@ const InventoryRoute = () => {
                       >
                         Delete
                       </button>
-                      <button className="btn btn-primary"><Link className="text-white text-decoration-none" to={`/inventory/${f._id}`}>Update</Link></button>
+                      <button className="btn btn-primary">
+                        <Link
+                          className="text-white text-decoration-none"
+                          to={`/inventory/${f._id}`}
+                        >
+                          Update
+                        </Link>
+                      </button>
                     </div>
                   </div>
                 </div>

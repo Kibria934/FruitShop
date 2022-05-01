@@ -25,39 +25,35 @@ const SignUp = () => {
     confirmError: "",
     othersError: "",
   });
+
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [updateProfile, updating, updateError] = useUpdateProfile(auth, {
     updating: true,
   });
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     setName(name);
+
+    // ------------------ VALIDATION-----------------
+    if (password.length >= 6 && password === confirmPassword && !user) {
+      setErrors({ passError: "", confirmError: "" });
+      await createUserWithEmailAndPassword(email, password);
+      e.target.reset();
+    }
+    if (password !== confirmPassword) {
+      setErrors({ confirmError: "Password did not match" });
+      // setErrors({ ...errors, passError: "" });
+    }
     if (password.length < 6) {
       setErrors({
         ...errors,
         passError: "Please enter more than 6 character password",
       });
-    }
-    if (password.length >= 6) {
-      setErrors({ ...errors, passError: "" });
-
-      if (password !== confirmPassword) {
-        setErrors({ ...errors, confirmError: "Password did not match" });
-        setErrors({ ...errors, passError: "" });
-      }
-      if (password == confirmPassword || !user) {
-        await createUserWithEmailAndPassword(email, password);
-        setErrors({ ...errors, confirmError: "" });
-        e.target.reset();
-        setErrors({ ...errors, passError: "" });
-        // await updateProfile({displayName:name})
-      }
     }
   };
   useEffect(() => {
@@ -75,32 +71,30 @@ const SignUp = () => {
           break;
       }
     }
-    if (user && !error) {
-      {
-        toast.success("Your account created");
-      }
+    if (user && !error ) {
+      navigate(from, { replace: true });
+      updateProfile({ displayName: name });
     }
-    if (googleUser && !googleError) {
-      {
-        toast.success("Your account created");
-      }
-    }
-  }, [user, error, googleUser, googleError]);
-  if (loading) {
-    <Loading></Loading>;
-  }
-  useEffect(() => {
-    if (user) {
-      if (user) {
-        console.log(user);
-        updateProfile({ displayName: name });
-        navigate(from, { replace: true });
-      }
-    }
-    if (updating) {
-      <Loading></Loading>;
-    }
-  }, [user, updating]);
+    // if (updating) {
+    //   <Loading></Loading>;
+    // <p>loading.....</p>
+    // }
+  }, [user]);
+  // if (loading) {
+  //   <Loading></Loading>;
+  // }
+  // useEffect(() => {
+  //   if (user) {
+  //     if (user) {
+  //       // console.log(user);
+  //       // updateProfile({ displayName: name });
+  //       // navigate(from, { replace: true });
+  //     }
+  //   }
+  //   // if (updating) {
+  //   //   <Loading></Loading>;
+  //   // }
+  // }, [user, updating]);
 
   const handleGoogle = (e) => {
     signInWithGoogle();

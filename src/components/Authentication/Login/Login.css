@@ -6,3 +6,6 @@
      align-items: center;
      height: 90vh;
 }
+.resetBtn{
+     cursor: pointer;
+}

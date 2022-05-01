@@ -4,6 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import "./Login.css";
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -17,10 +18,12 @@ const Login = () => {
     useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, loggedUser, loggedLoading, loggedError] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
   const [errors, setErrors] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-
+  const [emailAcount, SetEmailAcount] = useState("");
   const from = location.state?.from?.pathname || "/";
 
   /* ---------------------- SignIn with email funtionalities -------------------
@@ -29,6 +32,7 @@ const Login = () => {
   const handleSignin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
+    SetEmailAcount(email);
     const password = e.target.password.value;
     // console.log(email, "password", password);
     if (email && password) {
@@ -42,11 +46,13 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle();
   };
-  if (googleLoading) {
+  if (googleLoading || loggedLoading) {
     <Loading></Loading>;
   }
+
   useEffect(() => {
     if (loggedError) {
+      console.log(loggedError.code);
       switch (loggedError.code) {
         case "auth/wrong-password":
           toast.error("Please enter the correct password !!");
@@ -61,10 +67,6 @@ const Login = () => {
     }
     if (user) {
       navigate(from, { replace: true });
-    }
-    if (loading) {
-      <p>Loadding...</p>;
-      <Loading></Loading>;
     }
   }, [user, loggedError, error]);
   return (
@@ -96,11 +98,25 @@ const Login = () => {
           </Button>
         </Form>
         <p>
-          New in Fruit shop?{" "}
-          <Link to={"/signup"} className="link">
+          New in Fruit shop?
+          <Link to={"/signup"} className="link ms-1">
             Creat new account
           </Link>
         </p>
+        {
+          loggedError?.code=='auth/wrong-password'&&
+          <p
+            onClick={async () => {
+              await sendPasswordResetEmail(emailAcount);
+              toast.success("Sent email");
+              
+            }}
+            className="mt-0 text-danger resetBtn text-decoration-underline"
+          >
+            Forgot Password
+          </p>
+        }
+
         <div>
           <div>
             <hr></hr>
@@ -113,7 +129,7 @@ const Login = () => {
             Google SignIn{" "}
           </button>
         </div>
-        <Toaster id={'test'}></Toaster>
+        <Toaster id={"test"}></Toaster>
       </div>
     </div>
   );

@@ -15,8 +15,9 @@ const PrivateRoute = ({ children }) => {
 
   let location = useLocation();
   if (loading) {
-    <Loading></Loading>;
+  return  <Loading></Loading>;
   }
+
   if (!user) {
     // Redirect them to the /login page, but save the current location they were
     // trying to go to when they were redirected. This allows us to send them
@@ -25,15 +26,17 @@ const PrivateRoute = ({ children }) => {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
   //   if(useSendEmailVerification)
-const handleRelode=()=>{
-   window.location.reload(true)
-}
+  const handleRelode = () => {
+    window.location.reload(true);
+  };
   if (!user.emailVerified) {
     return (
       <div className="text-center mt-5">
         <h3 className="text-danger">Your Email is not verified </h3>
         <h5 className="text-success"> Please check our email</h5>
-        <button className="btn btn-primary" onClick={handleRelode}>Refresh</button>
+        <button className="btn btn-primary" onClick={handleRelode}>
+          Refresh
+        </button>
       </div>
     );
   }

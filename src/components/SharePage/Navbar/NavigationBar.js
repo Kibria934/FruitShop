@@ -10,9 +10,9 @@ const NavigationBar = () => {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   useEffect(() => {
-    if (loading) {
-      <Loading></Loading>;
-    }
+    // if (loading) {
+    //   <Loading></Loading>;
+    // }
     if (user) {
       setName(user?.displayName);
     }

@@ -1,0 +1,10 @@
+.loader{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spinner{
+    width: 60px;
+    height: 60px;
+}

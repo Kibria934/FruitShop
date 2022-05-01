@@ -18,14 +18,8 @@ const FruitDetails = () => {
   /* ==============================================
                   deleverd function 
     ============================================== */
-
-  const handleDelivered = (e) => {
-    e.preventDefault();
-    const number = e.target.number.value;
-    const count = +number;
-    console.log(count);
-
-    if (!count && quantity > 0) {
+  const handleDeliverSingleItem = () => {
+    if (quantity > 0) {
       const updateFruit = {
         _id: _id,
         name: name,
@@ -43,10 +37,18 @@ const FruitDetails = () => {
         body: JSON.stringify(updateFruit),
       })
         .then((res) => res.json())
-        .then((result) => {
-          e.target.reset();
-        });
+        .then((result) => {});
     }
+    if (quantity <= 0 ) {
+      toast.error(`No ${name} available`);
+    }
+  };
+
+  const handleDelivered = (e) => {
+    e.preventDefault();
+    const number = e.target.number.value;
+    const count = +number;
+
     if (count && count > 0) {
       const updateFruit = {
         _id: _id,
@@ -69,9 +71,6 @@ const FruitDetails = () => {
           e.target.reset();
         });
     }
-   if(quantity <= 0 && !count){
-    toast.error(`No ${name} available`)
-   }
   };
   return (
     <div className="container ">
@@ -107,28 +106,16 @@ const FruitDetails = () => {
             placeholder="number"
           /> */}
           <form onSubmit={handleDelivered}>
-            <input
-              type="number"
-              name="number"
-              // onChange={(e) => {
-              //   if (!update) {
-              //     setNumber(e.target.value);
-              //   }
-              //   if (update) {
-              //     e.target.reset();
-              //   }
-              // }}
-              placeholder="number"
-            />
-            <input type="submit" name="submit" value="Delivered" />
-            {/* <input type="submit"> Delivered</input> */}
+            <input type="number" name="number" placeholder="number" />
+            <input type="submit" name="submit" value="Add Fruit" />
           </form>
+          <button onClick={() => handleDeliverSingleItem()}> Delivered</button>
           <Link to="/inventory">
             <button>Manage Inventor</button>
           </Link>
         </div>
-        <Toaster></Toaster>
       </div>
+      <Toaster></Toaster>
     </div>
   );
 };

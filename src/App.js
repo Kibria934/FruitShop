@@ -15,8 +15,15 @@ import AddItems from "./components/SharePage/AddItems/AddItems";
 import MyItems from "./components/SharePage/MyItems/MyItems";
 import PrivateRoute from "./components/SharePage/PrivateRoute/PrivateRoute";
 import FruitDetails from "./components/SharePage/FruitDetails/FruitDetails";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
+import Loading from "./components/SharePage/Loading/Loading";
 
 function App() {
+  const [user, loading, authError] = useAuthState(auth);
+  if(loading){
+   return <Loading></Loading>
+  }
   return (
     <div>
       <NavigationBar></NavigationBar>
