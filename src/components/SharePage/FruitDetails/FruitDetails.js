@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
 
 const FruitDetails = () => {
@@ -9,26 +10,68 @@ const FruitDetails = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setFruit(data));
-  },[]);
-  // console.log(fruit);
+  });
   const { _id, name, picture, SupplierName, quantity, price, description } =
     fruit;
-    // console.log(picture);
   const [number, setNumber] = useState(0);
+  const [update, setUpdate] = useState(false);
+  /* ==============================================
+                  deleverd function 
+    ============================================== */
 
   const handleDelivered = (e) => {
-    console.log(fruit);
- const updateFruit= {
-    _id:_id,
-    name:name,
-    picture:picture.split("?ixlib")[0],
-    SupplierName:SupplierName,
-    quantity:quantity-1,
-    price:price,
-    description:description
-  }
-  console.log(updateFruit);
+    e.preventDefault();
+    const number = e.target.number.value;
+    const count = +number;
+    console.log(count);
 
+    if (!count && quantity > 0) {
+      const updateFruit = {
+        _id: _id,
+        name: name,
+        picture: picture,
+        SupplierName: SupplierName,
+        quantity: quantity - 1,
+        price: price,
+        description: description,
+      };
+      fetch(`http://localhost:5000/fruit/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateFruit),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          e.target.reset();
+        });
+    }
+    if (count && count > 0) {
+      const updateFruit = {
+        _id: _id,
+        name: name,
+        picture: picture,
+        SupplierName: SupplierName,
+        quantity: +quantity + count,
+        price: price,
+        description: description,
+      };
+      fetch(`http://localhost:5000/fruit/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateFruit),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          e.target.reset();
+        });
+    }
+   if(quantity <= 0 && !count){
+    toast.error(`No ${name} available`)
+   }
   };
   return (
     <div className="container ">
@@ -47,17 +90,44 @@ const FruitDetails = () => {
           </h4>
           <h5>Supplier Name: {SupplierName}</h5>
           <p>About Fruit:{description}</p>
-          <button onClick={() => handleDelivered()}> Delivered</button>
+          {/* <button onClick={() => handleDelivered()}> Delivered</button>
+          <Link to="/inventory">
+            <button>Manage Inventor</button>
+          </Link> */}
+          {/* <input
+            type="number"
+            name="number"
+            onChange={(e) => {
+              if (!update) {
+                setNumber(e.target.value);
+              }if(update){
+                e.target.reset()
+              }
+            }}
+            placeholder="number"
+          /> */}
+          <form onSubmit={handleDelivered}>
+            <input
+              type="number"
+              name="number"
+              // onChange={(e) => {
+              //   if (!update) {
+              //     setNumber(e.target.value);
+              //   }
+              //   if (update) {
+              //     e.target.reset();
+              //   }
+              // }}
+              placeholder="number"
+            />
+            <input type="submit" name="submit" value="Delivered" />
+            {/* <input type="submit"> Delivered</input> */}
+          </form>
           <Link to="/inventory">
             <button>Manage Inventor</button>
           </Link>
-          <input
-            type="number"
-            name="number"
-            onChange={(e) => setNumber(e.target.value)}
-            placeholder="number"
-          />
         </div>
+        <Toaster></Toaster>
       </div>
     </div>
   );

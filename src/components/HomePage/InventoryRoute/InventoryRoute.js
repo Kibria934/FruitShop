@@ -30,6 +30,11 @@ const InventoryRoute = () => {
   return (
     <div className="container">
       <h1 className="text-primary m-4 text-center">All fruits</h1>
+      <button className="btn px-4 mx-3 btn-primary">
+        <Link className="text-white text-decoration-none" to={"/addItem"}>
+          Add New
+        </Link>
+      </button> 
 
       <div className="row row-cols-1 row-cols-md-3 g-5  mt-4 mx-2 ">
         {fruits.map((f) => (
@@ -44,6 +49,7 @@ const InventoryRoute = () => {
                       Price: ${f.price}
                       <small>/pc</small>
                     </h3>
+                    <h3>Quantity: {f.quantity}</h3>
                     <h3>Supplier Name:{"name"}</h3>
                     <p
                       className="card-text"
@@ -59,9 +65,7 @@ const InventoryRoute = () => {
                       >
                         Delete
                       </button>
-                      <button className="btn px-4 mx-3 btn-primary">
-                        <Link className="text-white text-decoration-none" to={'/addItem'}>Add New</Link>
-                      </button>
+                      <button className="btn btn-primary"><Link className="text-white text-decoration-none" to={`/inventory/${f._id}`}>Update</Link></button>
                     </div>
                   </div>
                 </div>
