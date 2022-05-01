@@ -9,31 +9,26 @@ const FruitDetails = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setFruit(data));
-  }, []);
+  },[]);
   // console.log(fruit);
   const { _id, name, picture, SupplierName, quantity, price, description } =
     fruit;
+    // console.log(picture);
   const [number, setNumber] = useState(0);
 
   const handleDelivered = (e) => {
+    console.log(fruit);
  const updateFruit= {
     _id:_id,
     name:name,
-    picture:picture,
+    picture:picture.split("?ixlib")[0],
     SupplierName:SupplierName,
     quantity:quantity-1,
     price:price,
     description:description
   }
-  fetch(url, {
-    method: "PUT",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(updateFruit),
-  })
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+  console.log(updateFruit);
+
   };
   return (
     <div className="container ">

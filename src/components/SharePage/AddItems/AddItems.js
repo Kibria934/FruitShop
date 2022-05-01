@@ -1,10 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useFruits from "../../hooks/useFruits";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const AddItems = () => {
+  const [user, loading, error] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
-  const [fruits,setFruit]=useFruits()
+  const [fruits, setFruit] = useFruits();
   const onSubmit = (data) => {
     console.log(data);
     fetch(`http://localhost:5000/fruits`, {
@@ -12,11 +15,13 @@ const AddItems = () => {
       headers: {
         "content-type": "application/json",
       },
-      body:JSON.stringify(data)
-    }).then(res => res.json()).then(result => {
-        console.log(result);
-        setFruit(result)
+      body: JSON.stringify(data),
     })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        setFruit(result);
+      });
   };
   return (
     <div className="container mx-auto text-center m-4 ">
@@ -62,6 +67,12 @@ const AddItems = () => {
           {...register("quantity", { min: 1, max: 9999 })}
           required
           placeholder="Quantity"
+        />
+        <input
+          className="m-2 p-2 opacity-25"
+          {...register("email")}
+          value={user?.email}
+          readOnly
         />
         <input className="m-2 p-2" type="Submit" />
       </form>
