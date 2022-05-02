@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
+import'./FruitDetails.css'
 
 const FruitDetails = () => {
   const { id } = useParams();
@@ -89,25 +90,9 @@ const FruitDetails = () => {
           </h4>
           <h5>Supplier Name: {SupplierName}</h5>
           <p>About Fruit:{description}</p>
-          {/* <button onClick={() => handleDelivered()}> Delivered</button>
-          <Link to="/inventory">
-            <button>Manage Inventor</button>
-          </Link> */}
-          {/* <input
-            type="number"
-            name="number"
-            onChange={(e) => {
-              if (!update) {
-                setNumber(e.target.value);
-              }if(update){
-                e.target.reset()
-              }
-            }}
-            placeholder="number"
-          /> */}
           <form onSubmit={handleDelivered}>
-            <input type="number" name="number" placeholder="number" />
-            <input type="submit" name="submit" value="Add Fruit" />
+            <input className="int-box" type="number" name="number" placeholder="number" />
+            <input className="int-box" type="submit" name="submit" value="Add Fruit" />
           </form>
           <button onClick={() => handleDeliverSingleItem()}> Delivered</button>
           <Link to="/inventory">

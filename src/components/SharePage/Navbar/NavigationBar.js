@@ -31,6 +31,9 @@ const NavigationBar = () => {
             <Nav.Link as={Link} to="/inventory">
               ManageInventory
             </Nav.Link>
+            <Nav.Link as={Link} to="/blogs">
+              Blogs
+            </Nav.Link>
             {user && (
               <>
                 <Nav.Link as={Link} to="/addItem">

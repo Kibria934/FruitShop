@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Form, ToastContainer } from "react-bootstrap";
 import {
@@ -9,7 +10,6 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import Loading from "../../SharePage/Loading/Loading";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -43,11 +43,15 @@ const SignUp = () => {
     if (password.length >= 6 && password === confirmPassword && !user) {
       setErrors({ passError: "", confirmError: "" });
       await createUserWithEmailAndPassword(email, password);
+      const { data } = await axios.post("http://localhost:5000/login", {
+        email: email,
+      });
+      navigate(from, { replace: true });
+      localStorage.setItem("token", data);
       e.target.reset();
     }
     if (password !== confirmPassword) {
       setErrors({ confirmError: "Password did not match" });
-      // setErrors({ ...errors, passError: "" });
     }
     if (password.length < 6) {
       setErrors({
@@ -58,7 +62,6 @@ const SignUp = () => {
   };
   useEffect(() => {
     if (error) {
-      // console.log(error.code);
       switch (error.code) {
         case "auth/email-already-in-use":
           toast.error("Already have this account!!");
@@ -71,30 +74,10 @@ const SignUp = () => {
           break;
       }
     }
-    if (user && !error ) {
-      navigate(from, { replace: true });
+    if (user && !error) {
       updateProfile({ displayName: name });
     }
-    // if (updating) {
-    //   <Loading></Loading>;
-    // <p>loading.....</p>
-    // }
   }, [user]);
-  // if (loading) {
-  //   <Loading></Loading>;
-  // }
-  // useEffect(() => {
-  //   if (user) {
-  //     if (user) {
-  //       // console.log(user);
-  //       // updateProfile({ displayName: name });
-  //       // navigate(from, { replace: true });
-  //     }
-  //   }
-  //   // if (updating) {
-  //   //   <Loading></Loading>;
-  //   // }
-  // }, [user, updating]);
 
   const handleGoogle = (e) => {
     signInWithGoogle();

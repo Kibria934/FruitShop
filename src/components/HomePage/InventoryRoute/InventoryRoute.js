@@ -32,17 +32,14 @@ const InventoryRoute = () => {
     }
   };
   return (
-    <div className="container">
+    <div className="container inventory-container">
       <h1 className="text-primary m-4 text-center">All fruits</h1>
-      <button className="btn px-4 mx-3 btn-primary">
-        <Link className="text-white text-decoration-none" to={"/addItem"}>
+        <Link className="text-white seeAll text-decoration-none" to={"/addItem"}>
           Add New
         </Link>
-      </button>
-
       <div className="row row-cols-1 row-cols-md-3 g-5  mt-4 mx-2 ">
         {fruits.map((f) => (
-          <div key={f._id} className="  c-container">
+          <div key={f._id} className="c-container">
             {
               <div className="col">
                 <div className="card text-start">

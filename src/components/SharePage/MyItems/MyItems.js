@@ -13,11 +13,16 @@ const MyItems = () => {
   const email = user.email;
   console.log(email);
   const url = `http://localhost:5000/myFruit?email=${email}`;
+  console.log(url);
   useEffect(() => {
-    fetch(url)
+    fetch(url,{
+      headers:{
+        authorization:`Bearer ${localStorage.getItem('token')}`
+      }
+    })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setMyFruit(data);
       });
   }, [fruits]);
@@ -61,8 +66,8 @@ const MyItems = () => {
                   <h1>{f.name}</h1>
                 </div>
               </div>
-              <span onClick={() => handleDelete(f._id)} className="fs-2 me-4">
-                <RiDeleteBack2Line />
+              <span onClick={() => handleDelete(f._id)} className="fs-2 reset-button me-4">
+                <button type=""><RiDeleteBack2Line /></button>
               </span>
             </div>
           ))}

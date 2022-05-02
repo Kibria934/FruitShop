@@ -17,11 +17,12 @@ import FruitDetails from "./components/SharePage/FruitDetails/FruitDetails";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import Loading from "./components/SharePage/Loading/Loading";
+import Blogs from "./components/Blogs/Blogs";
 
 function App() {
   const [user, loading, authError] = useAuthState(auth);
-  if(loading){
-   return <Loading></Loading>
+  if (loading) {
+    return <Loading></Loading>;
   }
   return (
     <div>
@@ -64,10 +65,10 @@ function App() {
         ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
-
     </div>
   );
 }

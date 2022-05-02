@@ -11,6 +11,7 @@ import {
 import auth from "../../../firebase.init";
 import Loading from "../../SharePage/Loading/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -29,15 +30,20 @@ const Login = () => {
   /* ---------------------- SignIn with email funtionalities -------------------
   ------------------------------------------------------------------------ */
 
-  const handleSignin = (e) => {
+  const handleSignin = async(e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    SetEmailAcount(email);
+    console.log(email);
+    // SetEmailAcount(e.target.email.value);
     const password = e.target.password.value;
     // console.log(email, "password", password);
     if (email && password) {
-      signInWithEmailAndPassword(email, password);
+     await signInWithEmailAndPassword(email, password);
       e.target.reset();
+      const {data}=await axios.post('http://localhost:5000/login',{email:email})
+      localStorage.setItem('token',data)
+      // navigate(from, { replace: true });
+
     }
   };
 
@@ -65,9 +71,6 @@ const Login = () => {
           break;
       }
     }
-    if (user) {
-      navigate(from, { replace: true });
-    }
   }, [user, loggedError, error]);
   return (
     <div className="f-container">
@@ -81,6 +84,7 @@ const Login = () => {
               name="email"
               placeholder="Enter email"
               required
+              // onChange={SetEmailAcount(email.value)}
             />
           </Form.Group>
 
