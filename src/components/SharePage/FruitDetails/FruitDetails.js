@@ -6,7 +6,7 @@ import'./FruitDetails.css'
 const FruitDetails = () => {
   const { id } = useParams();
   const [fruit, setFruit] = useState([]);
-  const url = `http://localhost:5000/fruit/${id}`;
+  const url = `https://dry-tor-91636.herokuapp.com/fruit/${id}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -30,7 +30,7 @@ const FruitDetails = () => {
         price: price,
         description: description,
       };
-      fetch(`http://localhost:5000/fruit/${id}`, {
+      fetch(`https://dry-tor-91636.herokuapp.com/fruit/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -60,7 +60,7 @@ const FruitDetails = () => {
         price: price,
         description: description,
       };
-      fetch(`http://localhost:5000/fruit/${id}`, {
+      fetch(`https://dry-tor-91636.herokuapp.com/fruit/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

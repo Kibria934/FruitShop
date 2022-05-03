@@ -40,10 +40,8 @@ const Login = () => {
     if (email && password) {
      await signInWithEmailAndPassword(email, password);
       e.target.reset();
-      const {data}=await axios.post('http://localhost:5000/login',{email:email})
+      const {data}=await axios.post('https://dry-tor-91636.herokuapp.com/login',{email:email})
       localStorage.setItem('token',data)
-      navigate(from, { replace: true });
-
     }
   };
 
@@ -51,6 +49,9 @@ const Login = () => {
   -------------------------------------------------------------------- */
   const handleGoogleSignIn = () => {
     signInWithGoogle();
+    navigate(from, { replace: true });
+
+
   };
   if (googleLoading || loggedLoading) {
     <Loading></Loading>;
@@ -70,6 +71,9 @@ const Login = () => {
           console.log(loggedError.code);
           break;
       }
+    }
+    if(user){
+      navigate(from, { replace: true });
     }
   }, [user, loggedError, error]);
   return (

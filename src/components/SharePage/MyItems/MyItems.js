@@ -12,7 +12,7 @@ const MyItems = () => {
   const [user] = useAuthState(auth);
   const email = user.email;
   console.log(email);
-  const url = `http://localhost:5000/myFruit?email=${email}`;
+  const url = `https://dry-tor-91636.herokuapp.com/myFruit?email=${email}`;
   console.log(url);
   useEffect(() => {
     fetch(url,{
@@ -32,7 +32,7 @@ const MyItems = () => {
       "Are really want to delete this fruit item?"
     );
     if (procced) {
-      fetch(`http://localhost:5000/fruit/${id}`, {
+      fetch(`https://dry-tor-91636.herokuapp.com/fruit/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

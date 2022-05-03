@@ -43,10 +43,9 @@ const SignUp = () => {
     if (password.length >= 6 && password === confirmPassword && !user) {
       setErrors({ passError: "", confirmError: "" });
       await createUserWithEmailAndPassword(email, password);
-      const { data } = await axios.post("http://localhost:5000/login", {
+      const { data } = await axios.post("https://dry-tor-91636.herokuapp.com/login", {
         email: email,
       });
-      navigate(from, { replace: true });
       localStorage.setItem("token", data);
       e.target.reset();
     }
@@ -76,11 +75,15 @@ const SignUp = () => {
     }
     if (user && !error) {
       updateProfile({ displayName: name });
+      navigate(from, { replace: true });
+
     }
   }, [user]);
 
   const handleGoogle = (e) => {
     signInWithGoogle();
+    navigate(from, { replace: true });
+
   };
   return (
     <div>

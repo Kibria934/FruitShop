@@ -3,16 +3,17 @@ import { useForm } from "react-hook-form";
 import useFruits from "../../hooks/useFruits";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import'./AddItems.css'
-
+import "./AddItems.css";
+import { useNavigate } from "react-router-dom";
 
 const AddItems = () => {
   const [user, loading, error] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const [fruits, setFruit] = useFruits();
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
-    console.log(data);
-    fetch(`http://localhost:5000/fruits`, {
+    fetch(`https://dry-tor-91636.herokuapp.com/fruits`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -23,6 +24,7 @@ const AddItems = () => {
       .then((result) => {
         console.log(result);
         setFruit(result);
+        navigate('/myItem')
       });
   };
   return (
