@@ -25,21 +25,18 @@ const InventoryRoute = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("deleted id:", data);
           const rest = fruits.filter((f) => f._id !== id);
-
           setFruits(rest);
         });
     }
   };
   return (
     <div className="container inventory-container">
-            <Title id={"Manage inventory(All Fruits)"}></Title>
-
+      <Title id={"Manage inventory(All Fruits)"}></Title>
       <h1 className="text-primary m-4 text-center">All fruits</h1>
-        <Link className="text-white seeAll text-decoration-none" to={"/addItem"}>
-          Add New
-        </Link>
+      <Link className="text-white seeAll text-decoration-none" to={"/addItem"}>
+        Add New
+      </Link>
       <div className="row row-cols-1 row-cols-md-3 g-5  mt-4 mx-2 ">
         {fruits.map((f) => (
           <div key={f._id} className="c-container">
@@ -59,8 +56,9 @@ const InventoryRoute = () => {
                       className="card-text"
                       title={`Click the button and see about ${f.name}`}
                     >
-                      {f.description.length > 110 ?
-                        f.description.slice(0, 110) + "...":f.description}
+                      {f.description.length > 110
+                        ? f.description.slice(0, 110) + "..."
+                        : f.description}
                     </p>
                     <div className=" d-flex justify-content-center w-100">
                       <button

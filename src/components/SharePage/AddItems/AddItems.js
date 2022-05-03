@@ -25,7 +25,7 @@ const AddItems = () => {
       .then((result) => {
         console.log(data);
         setFruit(result);
-        // navigate('/myItem')
+        navigate('/myItem')
       });
   };
   return (

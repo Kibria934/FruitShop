@@ -11,7 +11,7 @@ const Heath = () => {
           <div>
             <div className="array-fruit">
               {fruits.map((f) => (
-                <div className="d-flex f-box ">
+                <div key={f._id} className="d-flex f-box ">
                   <div>
                     <img
                       width={"80px"}

@@ -5,7 +5,6 @@ import './InventoryCart.css'
 
 
 const InventoryCart = ({ fruit }) => {
-  console.log(fruit);
   const { _id, name, price, picture, quantity,SupplierName, description } = fruit;
   return (
     <Link className="text-decoration-none  text-dark" to={`/inventory/${_id}`} >

@@ -31,18 +31,18 @@ const Login = () => {
   /* ---------------------- SignIn with email funtionalities -------------------
   ------------------------------------------------------------------------ */
 
-  const handleSignin = async(e) => {
+  const handleSignin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    console.log(email);
-    // SetEmailAcount(e.target.email.value);
     const password = e.target.password.value;
-    // console.log(email, "password", password);
     if (email && password) {
-     await signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(email, password);
       e.target.reset();
-      const {data}=await axios.post('https://dry-tor-91636.herokuapp.com/login',{email:email})
-      localStorage.setItem('token',data)
+      const { data } = await axios.post(
+        "https://dry-tor-91636.herokuapp.com/login",
+        { email: email }
+      );
+      localStorage.setItem("token", data);
     }
   };
 
@@ -51,8 +51,6 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle();
     navigate(from, { replace: true });
-
-
   };
   if (googleLoading || loggedLoading) {
     <Loading></Loading>;
@@ -60,7 +58,6 @@ const Login = () => {
 
   useEffect(() => {
     if (loggedError) {
-      console.log(loggedError.code);
       switch (loggedError.code) {
         case "auth/wrong-password":
           toast.error("Please enter the correct password !!");
@@ -69,17 +66,16 @@ const Login = () => {
           toast.error("Please create an account first !!");
           break;
         default:
-          console.log(loggedError.code);
           break;
       }
     }
-    if(user){
+    if (user) {
       navigate(from, { replace: true });
     }
   }, [user, loggedError, error]);
   return (
     <div className="f-container">
-            <Title id={"Login "}></Title>
+      <Title id={"Login "}></Title>
 
       <div className=" shadow p-3 log-section rounded-3 mx-auto ">
         <h1 className="m-3">Log in here!</h1>
@@ -91,7 +87,6 @@ const Login = () => {
               name="email"
               placeholder="Enter email"
               required
-              // onChange={SetEmailAcount(email.value)}
             />
           </Form.Group>
 
@@ -114,19 +109,17 @@ const Login = () => {
             Creat new account
           </Link>
         </p>
-        {
-          loggedError?.code=='auth/wrong-password'&&
+        {loggedError?.code == "auth/wrong-password" && (
           <p
             onClick={async () => {
               await sendPasswordResetEmail(emailAcount);
               toast.success("Sent email");
-              
             }}
             className="mt-0 text-danger resetBtn text-decoration-underline"
           >
             Forgot Password
           </p>
-        }
+        )}
 
         <div>
           <div>
