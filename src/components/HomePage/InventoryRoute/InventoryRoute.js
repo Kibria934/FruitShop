@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useFruits from "../../hooks/useFruits";
 import Loading from "../../SharePage/Loading/Loading";
+import Title from "../../Title/Title";
 import "./InventorRoute.css";
 
 const InventoryRoute = () => {
@@ -33,6 +34,8 @@ const InventoryRoute = () => {
   };
   return (
     <div className="container inventory-container">
+            <Title id={"Manage inventory(All Fruits)"}></Title>
+
       <h1 className="text-primary m-4 text-center">All fruits</h1>
         <Link className="text-white seeAll text-decoration-none" to={"/addItem"}>
           Add New
@@ -56,17 +59,17 @@ const InventoryRoute = () => {
                       className="card-text"
                       title={`Click the button and see about ${f.name}`}
                     >
-                      {f.description.length > 110 &&
-                        f.description.slice(0, 110) + "..."}
+                      {f.description.length > 110 ?
+                        f.description.slice(0, 110) + "...":f.description}
                     </p>
                     <div className=" d-flex justify-content-center w-100">
                       <button
                         onClick={() => handleDelete(f._id)}
-                        className="btn px-4 mx-3 btn-primary"
+                        className="text-red border px-4 mx-3 update-btn "
                       >
                         Delete
                       </button>
-                      <button className="btn btn-primary">
+                      <button className="update-btn">
                         <Link
                           className="text-white text-decoration-none"
                           to={`/inventory/${f._id}`}

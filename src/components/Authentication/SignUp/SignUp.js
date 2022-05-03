@@ -10,6 +10,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Title from "../../Title/Title";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -87,6 +88,8 @@ const SignUp = () => {
   };
   return (
     <div>
+            <Title id={"Signup "}></Title>
+
       <div className="f-container">
         <div className="shadow p-3 log-section rounded-3 mx-auto ">
           <h1 className="m-3">Signup here!</h1>

@@ -18,6 +18,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import Loading from "./components/SharePage/Loading/Loading";
 import Blogs from "./components/Blogs/Blogs";
+import Title from "./components/Title/Title";
 
 function App() {
   const [user, loading, authError] = useAuthState(auth);
@@ -26,6 +27,7 @@ function App() {
   }
   return (
     <div className="App">
+      {loading && <Title id={"Loading..."}></Title>}
       <NavigationBar></NavigationBar>
 
       <Routes>

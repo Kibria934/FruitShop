@@ -5,6 +5,7 @@ import "./MyItems.css";
 import { RiDeleteBack2Line } from "react-icons/ri";
 import useFruits from "../../hooks/useFruits";
 import { Placeholder } from "react-bootstrap";
+import Title from "../../Title/Title";
 
 const MyItems = () => {
   const [fruits, setFruits] = useFruits();
@@ -47,6 +48,8 @@ const MyItems = () => {
   console.log(myFruit);
   return (
     <div className="my-items">
+            <Title id={"My Fruits "}></Title>
+
       {myFruit.length ? (
         <div className=" item-card">
           <h1 className="text-center head-tag">My Chosen Fruits</h1>

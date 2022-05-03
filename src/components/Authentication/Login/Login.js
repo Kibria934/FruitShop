@@ -12,6 +12,7 @@ import auth from "../../../firebase.init";
 import Loading from "../../SharePage/Loading/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Title from "../../Title/Title";
 
 const Login = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -78,6 +79,8 @@ const Login = () => {
   }, [user, loggedError, error]);
   return (
     <div className="f-container">
+            <Title id={"Login "}></Title>
+
       <div className=" shadow p-3 log-section rounded-3 mx-auto ">
         <h1 className="m-3">Log in here!</h1>
         <Form onSubmit={handleSignin}>

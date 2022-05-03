@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Helmet from "react-helmet";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
+import Title from "../../Title/Title";
 import'./FruitDetails.css'
 
 const FruitDetails = () => {
@@ -74,10 +76,13 @@ const FruitDetails = () => {
     }
   };
   return (
+
     <div className="container fruit-details-container ">
+           <Title id={"Fruit Details"}></Title>
+
       <div className="details-section m-4 d-flex justify-content-around w-100">
         <div>
-          <img width={"500px"} src={picture} alt="" />
+          <img width={"380px"} src={picture} alt="" />
         </div>
         <div className="ms-2 content-section">
           <h2> {name}</h2>
