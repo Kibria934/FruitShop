@@ -11,9 +11,29 @@
     margin-top: 30px;
 
 }
+.accordion-section{
+  width: 330px;
+}
 .q-section {
   background-color: rgb(135, 234, 235);
   font-weight: 500;
   font-size: 17px;
   min-width: 1300px;
+}
+@media screen and (max-width:450px) {
+  .q-container{
+    width: fit-content;
+    margin: 10px;
+  }
+  .q-section{
+    width: 330px !important;
+    background-color: transparent !important;
+
+  }
+  .inner-div{
+    width: 350px;
+    margin: 4px;
+  }.q-container span{
+    width: 330px;
+  }
 }

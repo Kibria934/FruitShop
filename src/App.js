@@ -25,7 +25,7 @@ function App() {
     return <Loading></Loading>;
   }
   return (
-    <div>
+    <div className="App">
       <NavigationBar></NavigationBar>
 
       <Routes>

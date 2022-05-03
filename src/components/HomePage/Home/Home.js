@@ -7,7 +7,7 @@ import Inventory from "../Inventory/Inventory";
 
 const Home = () => {
   return (
-    <div>
+    <div className="w-100">
       <div>
         <Banner></Banner>
       </div>

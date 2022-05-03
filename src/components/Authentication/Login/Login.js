@@ -42,7 +42,7 @@ const Login = () => {
       e.target.reset();
       const {data}=await axios.post('http://localhost:5000/login',{email:email})
       localStorage.setItem('token',data)
-      // navigate(from, { replace: true });
+      navigate(from, { replace: true });
 
     }
   };
@@ -74,7 +74,7 @@ const Login = () => {
   }, [user, loggedError, error]);
   return (
     <div className="f-container">
-      <div className="w-25 shadow p-3 rounded-3 mx-auto ">
+      <div className=" shadow p-3 log-section rounded-3 mx-auto ">
         <h1 className="m-3">Log in here!</h1>
         <Form onSubmit={handleSignin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">

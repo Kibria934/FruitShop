@@ -3,5 +3,14 @@
     border: 0;
     padding: 5px 30px;
     border-radius: 15px;
-    transform: translateX(800px);
+    transform: translateX(550px);
+    font-weight: 600;
+    transition: .5s;
+}
+.seeAll:hover{
+    background-color: rgba(12, 194, 207, 0.715);
+    color: rgb(6, 45, 69);
+}.seeAll:active{
+    background-color: rgb(253, 88, 27);
+    color: white;
 }

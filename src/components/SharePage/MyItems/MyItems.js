@@ -48,11 +48,11 @@ const MyItems = () => {
   return (
     <div className="my-items">
       {myFruit.length ? (
-        <div className="container">
+        <div className=" item-card">
           <h1 className="text-center head-tag">My Chosen Fruits</h1>
           {myFruit?.map((f) => (
-            <div className="d-flex justify-content-between align-items-center  signleIteme">
-              <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-between align-items-center card  signleIteme">
+              <div className="left-side">
                 <div className="pic">
                   <img
                     width={"100px"}
@@ -62,7 +62,6 @@ const MyItems = () => {
                   />
                 </div>
                 <div className="ms-2">
-                  {" "}
                   <h1>{f.name}</h1>
                 </div>
               </div>

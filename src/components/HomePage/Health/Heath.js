@@ -5,8 +5,8 @@ const Heath = () => {
   const [fruits, setFruits] = useFruits();
   return (
     <div>
-      <h1 className="text-center mt-4">Fruit and health</h1>
-      <div className="d-flex justify-content-between mt-1 container">
+      <h1 className="text-center border-bottom container py-2 mb-0 mt-4">Fruit and health</h1>
+      <div className="d-flex health-container justify-content-between container">
         <div className="d-flex align-items-center justify-content-center">
           <div>
             <div className="array-fruit">

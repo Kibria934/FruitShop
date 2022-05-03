@@ -8,3 +8,13 @@
 .resetBtn{
      cursor: pointer;
 }
+.log-section{
+     width: 25%;
+     margin: 20px;
+     padding: 60px;
+}
+@media screen and (max-width:450px) {
+     .log-section{
+          width: 100%;
+     }
+}

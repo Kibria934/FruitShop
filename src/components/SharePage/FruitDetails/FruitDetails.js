@@ -74,13 +74,13 @@ const FruitDetails = () => {
     }
   };
   return (
-    <div className="container ">
-      <div className="f-section m-4 d-flex justify-content-around w-100">
+    <div className="container fruit-details-container ">
+      <div className="details-section m-4 d-flex justify-content-around w-100">
         <div>
           <img width={"500px"} src={picture} alt="" />
         </div>
-        <div className="ms-2">
-          <h2>Fruit Name: {name}</h2>
+        <div className="ms-2 content-section">
+          <h2> {name}</h2>
           <small>Fruit ID: {id}</small>
           <h3>
             Quantity: <strong>{quantity}</strong>
@@ -91,12 +91,12 @@ const FruitDetails = () => {
           <h5>Supplier Name: {SupplierName}</h5>
           <p>About Fruit:{description}</p>
           <form onSubmit={handleDelivered}>
-            <input className="int-box" type="number" name="number" placeholder="number" />
-            <input className="int-box" type="submit" name="submit" value="Add Fruit" />
+            <input className="int-box" type="number" name="number" placeholder="Number" />
+            <input className="int-box-submit" type="submit" name="submit" value="Add Fruit" />
           </form>
-          <button onClick={() => handleDeliverSingleItem()}> Delivered</button>
+          <button className="delivery-btn" onClick={() => handleDeliverSingleItem()}> Delivered</button>
           <Link to="/inventory">
-            <button>Manage Inventor</button>
+            <button className="mange-btn">Manage Inventor</button>
           </Link>
         </div>
       </div>

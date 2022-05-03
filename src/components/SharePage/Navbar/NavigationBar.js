@@ -19,11 +19,13 @@ const NavigationBar = () => {
   }, [user, loading]);
   return (
     <div className="sticky-top">
-      <Navbar bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/">
             {user?.displayName ? `${name}` : "User"}
           </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/home">
               Home
@@ -53,8 +55,10 @@ const NavigationBar = () => {
             </Nav.Link>
           </Nav>
           <p>{user && "logout"}</p>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
+
     </div>
   );
 };

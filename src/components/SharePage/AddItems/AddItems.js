@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import useFruits from "../../hooks/useFruits";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import'./AddItems.css'
+
 
 const AddItems = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -27,7 +29,7 @@ const AddItems = () => {
     <div className="container mx-auto text-center m-4 ">
       <h1>Add your Products</h1>
       <form
-        className="d-flex flex-column w-50 mx-auto m-4"
+        className="d-flex input-group flex-column w-50 mx-auto m-4"
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
@@ -74,7 +76,7 @@ const AddItems = () => {
           value={user?.email}
           readOnly
         />
-        <input className="m-2 p-2" type="Submit" />
+        <input className="m-2 submit p-2" type="Submit" />
       </form>
     </div>
   );

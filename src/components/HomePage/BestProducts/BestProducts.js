@@ -8,7 +8,7 @@ const BestProducts = () => {
   return (
     <div className="mx-auto text-center">
       <h1>Best products</h1>
-      <div className="d-flex container mx-auto">
+      <div className="d-flex best-product-container container mx-auto">
         {fruits.slice(10, 15).map((f) => (
           <div>
             <div className="border m-3 b-container">

@@ -1,3 +1,152 @@
-.int-box{
-    border: 1px solid orangered;
+.int-box {
+  border: 0;
+  background-color: rgba(0, 229, 255, 0.248);
+  padding: 10px;
+  width: 350px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  margin: 15px 0;
+  border-radius: 5px;
+  font-size: 18px;
+}
+/* .int-box-submit{
+    padding: 9px 30px;
+    background-color: orangered;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.8);
+
+}
+.int-box-submit:hover{
+    background-color: rgb(0, 166, 255);
+}
+================= */
+
+.int-box-submit {
+  background-image: linear-gradient(
+    to right,
+    #e52d27 0%,
+    #b31217 51%,
+    #e52d27 100%
+  );
+}
+.int-box-submit {
+  /* margin: 10px; */
+  padding: 12px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px rgb(210, 206, 206);
+  border-radius: 10px;
+  border: 0;
+  font-weight: 600;
+}
+.int-box-submit:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.int-box-submit:active,
+focus {
+  color: black;
+}
+
+.delivery-btn {
+  background-image: linear-gradient(
+    to left,
+    #ff512f 20%,
+    #ce3c18 70%,
+    #ff512f 100%
+  );
+}
+.delivery-btn {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 600;
+}
+
+.delivery-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.delivery-btn:active,
+focus {
+  color: black;
+}
+
+.mange-btn {
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+}
+.mange-btn {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 600;
+}
+
+.mange-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.mange-btn:active {
+  color: black;
+}
+
+.details-section {
+  align-items: center;
+}
+.content-section {
+  color: rgb(116, 9, 9);
+}
+.content-section small {
+  color: rgb(57, 57, 57);
+}
+
+@media only screen and (max-width: 450px) {
+  .fruit-details-container {
+    width: 100%;
+  }
+  .details-section{
+      flex-wrap: wrap;
+  }
+  .content-section{
+      width: 100%;
+      margin-right: 50px;
+  }
+  .int-box{
+      width: 70%;
+  }
+  .int-box-submit{
+      width: 30%;
+      font-size: 15px;
+      padding:13px 5px  ;
+  }
 }
