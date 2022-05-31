@@ -5,7 +5,7 @@ import './InventoryCart.css'
 
 
 const InventoryCart = ({ fruit }) => {
-  const { _id, name, price, picture, quantity,SupplierName, description } = fruit;
+  const { _id, name,`` price, picture, quantity,SupplierName, description } = fruit;
   return (
     <Link className="text-decoration-none  text-dark" to={`/inventory/${_id}`} >
   <div className="col ">
@@ -15,7 +15,7 @@ const InventoryCart = ({ fruit }) => {
      </div>
       <div className="card-body  card-text">
         <h3 className="card-title name">{name.toUpperCase()}</h3>
-        <h3>Price: {price}<small>/pc</small></h3>
+        <h3>Prices: {price}<small>/pc</small></h3>
         <h3 className="quantity">Quantity: {quantity}</h3>
         <h3>Supplier Name:{SupplierName}</h3>
         <p className="card-text" title={`Click the button and see about ${name}`}>{description.length>110 && description.slice(0,110)+'...'}</p>
